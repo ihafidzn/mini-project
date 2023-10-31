@@ -1,0 +1,23 @@
+.table tr td img {
+  width: 80px !important;
+  height: 80px !important;
+  object-fit: cover;
+}
+
+td i {
+  cursor: pointer;
+}
+
+td {
+  color: var(--primary-color);
+}
+
+.buy__btn a {
+  color: aliceblue;
+  background-color: var(--primary-color);
+}
+
+td button .item {
+  width: 10px;
+  background-color: aqua;
+}
