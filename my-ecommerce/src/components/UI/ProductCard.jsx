@@ -28,27 +28,27 @@ const ProductCard = ({ product }) => {
   return (
     <>
       <Col lg="3" md="4" className="mb-2">
-        <div className="product__item">
-          <div className="product__img">
-            <motion.img
-              whileHover={{ scale: 0.9 }}
-              src={product.imgUrl}
-              alt=""
-            />
+        <Link to={`/shop/${product.id}`}>
+          <div className="product__item">
+            <div className="product__img">
+              <motion.img
+                whileHover={{ scale: 0.9 }}
+                src={product.imgUrl}
+                alt=""
+              />
+            </div>
+            <div className="p-2 product__info">
+              <h4 className="product__name text-dark">{product.productName}</h4>
+              <span className="text-dark">{product.category}</span>
+            </div>
+            <div className="product__card-bottom d-flex align-items-center justify-content-between p-2">
+              <span className="price">${product.price}</span>
+              <motion.span whileTap={{ scale: 1.2 }} onClick={addToCart}>
+                <i className="ri-add-line"></i>
+              </motion.span>
+            </div>
           </div>
-          <div className="p-2 product__info">
-            <h3 className="product__name">
-              <Link to={`/shop/${product.id}`}>{product.productName}</Link>
-            </h3>
-            <span>{product.category}</span>
-          </div>
-          <div className="product__card-bottom d-flex align-items-center justify-content-between p-2">
-            <span className="price">${product.price}</span>
-            <motion.span whileTap={{ scale: 1.2 }} onClick={addToCart}>
-              <i className="ri-add-line"></i>
-            </motion.span>
-          </div>
-        </div>
+        </Link>
       </Col>
     </>
   );
